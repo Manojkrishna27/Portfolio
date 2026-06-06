@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { socials as staticSocials } from "@/lib/socials";
+import { isValidExternalUrl, SITE } from "@/lib/constants";
 
 const navLinks = [
   { href: "#hero", label: "Home" },
@@ -43,11 +44,10 @@ export default function Footer({
           {/* Left — Branding */}
           <div className="max-w-xs space-y-3">
             <h3 className="text-lg font-bold tracking-tight text-white">
-              Ayush Kumar Gupta
+              {SITE.name}
             </h3>
             <p className="text-sm leading-relaxed text-neutral-500">
-              Full-stack developer who turns ideas into fast, polished
-              products — one clean commit at a time.
+              {SITE.role}
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function Footer({
           <div className="flex gap-3">
             {socialDisplay.map((s) => {
               const url = socialLinks[s.key];
-              if (!url) return null;
+              if (!isValidExternalUrl(url)) return null;
               return (
                 <Link
                   key={s.key}
@@ -88,8 +88,7 @@ export default function Footer({
         {/* Bottom bar */}
         <div className="mt-10 border-t border-white/6 pt-6 text-center">
           <p className="text-xs text-neutral-600">
-            &copy; {new Date().getFullYear()} Ayush Kumar Gupta. Built with
-            Next.js, Tailwind CSS &amp; a lot of ☕
+            &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
         </div>
       </div>

@@ -36,10 +36,10 @@ interface CfData {
 }
 
 const FALLBACK: CfData = {
-  rating: 1192,
-  maxRating: 1192,
-  rank: "pupil",
-  contests: 8,
+  rating: 0,
+  maxRating: 0,
+  rank: "newbie",
+  contests: 0,
 };
 
 interface CodeforcesTabProps {
@@ -143,6 +143,7 @@ export function CodeforcesTab({ data, isLoading }: CodeforcesTabProps) {
           </div>
 
           {/* Profile link */}
+          {"Codeforces" in socials && socials.Codeforces ? (
           <div className="flex justify-end px-6 pb-4 sm:px-8">
             <Link
               href={socials.Codeforces}
@@ -153,6 +154,7 @@ export function CodeforcesTab({ data, isLoading }: CodeforcesTabProps) {
               <ExternalLink className="h-3 w-3 transition-transform group-hover/link:translate-x-0.5" />
             </Link>
           </div>
+          ) : null}
         </motion.div>
       </BlurFade>
     </div>

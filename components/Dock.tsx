@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   UserIcon,
   WrenchIcon,
-  SwordsIcon,
   FolderOpenIcon,
   AwardIcon,
   BriefcaseIcon,
@@ -28,6 +27,7 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 import { Icons } from "./icons";
 import { socials as staticSocials } from "@/lib/socials";
 import { socialIconMap } from "@/lib/iconMap";
+import { isValidExternalUrl } from "@/lib/constants";
 
 
 const DATA = {
@@ -35,7 +35,6 @@ const DATA = {
     { href: "#hero", icon: ArrowUp, label: "To the top" },
     { href: "#about", icon: UserIcon, label: "About" },
     { href: "#skills", icon: WrenchIcon, label: "Skills" },
-    { href: "#competitive", icon: SwordsIcon, label: "Competitive Programming" },
     { href: "#projects", icon: FolderOpenIcon, label: "Projects" },
     { href: "#certifications", icon: AwardIcon, label: "Certifications" },
     { href: "#experience", icon: BriefcaseIcon, label: "Experience" },
@@ -53,7 +52,7 @@ const MOBILE_NAV = [
 
 function buildSocialEntries(socials: Record<string, string>) {
   return Object.entries(socials)
-    .filter(([platform]) => socialIconMap[platform]) // only show platforms with icons
+    .filter(([platform, url]) => socialIconMap[platform] && isValidExternalUrl(url))
     .map(([platform, url]) => ({
       name: platform,
       url,

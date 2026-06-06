@@ -14,6 +14,7 @@ import {
   LogOut,
   Briefcase,
 } from "lucide-react";
+import { SITE } from "@/lib/constants";
 
 const navItems = [
   { href: "/admin/dashboard", label: "Overview", icon: LayoutDashboard },
@@ -68,7 +69,8 @@ export default function DashboardLayout({
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 z-40 flex h-full w-60 flex-col border-r border-white/10 bg-neutral-950/80 backdrop-blur-sm">
         <div className="border-b border-white/10 px-5 py-4">
-          <h2 className="text-lg font-bold">Portfolio Admin</h2>
+          <h2 className="text-lg font-bold">{SITE.name}</h2>
+          <p className="text-xs text-neutral-500">Admin Panel</p>
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">

@@ -1,10 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "motion/react";
+import { Download } from "lucide-react";
+import Link from "next/link";
 import { LineShadowText } from "./ui/line-shadow-text";
-import Spline from "@splinetool/react-spline";
 import { SplineErrorBoundary } from "./SplineErrorBoundary";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { ASSETS, SITE } from "@/lib/constants";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+  loading: () => <div className="h-full w-full" aria-hidden />,
+});
 
 interface HeroData {
   greeting: string;
@@ -15,8 +23,8 @@ interface HeroData {
 
 export default function Hero({ data }: { data?: HeroData }) {
   const greeting = data?.greeting || "Hey, I'm";
-  const name = data?.name || "Ayush";
-  const tagline = data?.tagline || "Full-stack developer who turns ideas into fast, polished products\u00A0\u2014 one clean commit at a time.";
+  const name = data?.name || SITE.name;
+  const tagline = data?.tagline || SITE.role;
   const splineUrl = data?.splineUrl || "https://prod.spline.design/AeryvEqWxr2qjINc/scene.splinecode";
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -35,7 +43,7 @@ export default function Hero({ data }: { data?: HeroData }) {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-mono text-sm tracking-widest text-muted-foreground uppercase"
             >
-              Hey, I&apos;m
+              {greeting}
             </motion.p>
 
             <motion.div
@@ -84,6 +92,15 @@ export default function Hero({ data }: { data?: HeroData }) {
               >
                 Get in Touch
               </button>
+              <Link
+                href={ASSETS.resumePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 items-center gap-2 rounded-lg border border-white/10 px-5 text-sm font-medium text-neutral-300 transition-colors hover:bg-white/5"
+              >
+                <Download className="h-4 w-4" />
+                Resume
+              </Link>
             </motion.div>
           </div>
 

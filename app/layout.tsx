@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DockSection from "@/components/sections/DockSection";
 import { PortfolioShell } from "@/components/PortfolioShell";
 import DesktopHint from "@/components/DesktopHint";
+import { ASSETS, SITE, SITE_JSON_LD } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +17,55 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ayush Kumar Gupta | Full Stack Developer",
-  description:
-    "Portfolio of a full stack developer and a strong problem-solver with keen interest in coding and building stuff. Experienced in competitive programming and has a good grasp of data structures and algorithms. Skilled in JavaScript, TypeScript, React, Node.js, Next.js,etc. Passionate about learning new technologies and improving coding skills.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: SITE.title,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
+  keywords: [
+    "Manojkrishna M",
+    "Full Stack Developer",
+    "AI & Data Science",
+    "React",
+    "Flask",
+    "AWS",
+    "Docker",
+    "Cloud Computing",
+    "Portfolio",
+  ],
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: [{ url: ASSETS.profileImage, type: "image/png" }],
+    apple: [{ url: ASSETS.profileImage, type: "image/png" }],
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE.url,
+    title: SITE.title,
+    description: SITE.description,
+    siteName: `${SITE.name} Portfolio`,
+    images: [
+      {
+        url: ASSETS.ogImage,
+        width: 512,
+        height: 512,
+        alt: SITE.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: [ASSETS.ogImage],
+  },
 };
 
 export default function RootLayout({
@@ -29,13 +75,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSON_LD) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`} suppressHydrationWarning
       >
-        {/* Particles — hidden on /admin routes */}
         <PortfolioShell />
 
-        {/* Dock — completely detached from content, direct body child */}
         <div
           className="fixed inset-x-0 bottom-6 z-50 flex justify-center pointer-events-none"
           style={{ willChange: "transform" }}
@@ -45,10 +95,8 @@ export default function RootLayout({
           </div>
         </div>
 
-        {/* Desktop hint banner — also detached */}
         <DesktopHint />
 
-        {/* Page content — isolated overflow container */}
         <div className="overflow-x-hidden">
           {children}
         </div>
@@ -56,4 +104,3 @@ export default function RootLayout({
     </html>
   );
 }
-

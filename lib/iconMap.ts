@@ -40,10 +40,10 @@ export const skillIconMap: Record<string, IconRenderer> = {
   tanstack: Icons.tanstack,
   redux: Icons.redux,
   docker: Icons.docker,
-  
+  linux: Icons.linux,
+  git: Icons.git,
+  postman: Icons.postman,
 };
-
-/* ------------------------------------------------------------------ */
 /*  Category icon map  —  categoryIconKey (string) → LucideIcon        */
 /* ------------------------------------------------------------------ */
 

@@ -9,8 +9,8 @@ import { useCodeforcesStats } from "@/hooks/useCodeforcesStats";
 import { LeetCodeTab } from "./LeetCodeTab";
 import { CodeforcesTab } from "./CodeforcesTab";
 
-const LEETCODE_USERNAME = "ayyush_08";
-const CF_HANDLE = "ayushkumargupta2908";
+const LEETCODE_USERNAME = "LEETCODE_USERNAME_HERE";
+const CF_HANDLE = "CODEFORCES_HANDLE_HERE";
 
 const TABS = [
   { id: "leetcode", label: "LeetCode" },

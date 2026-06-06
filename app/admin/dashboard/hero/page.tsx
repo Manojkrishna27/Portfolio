@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Save } from "lucide-react";
+import { SITE } from "@/lib/constants";
 
 interface HeroData {
   greeting: string;
@@ -13,7 +14,7 @@ interface HeroData {
 export default function HeroAdmin() {
   const [data, setData] = useState<HeroData>({
     greeting: "Hey, I'm",
-    name: "Ayush",
+    name: SITE.name,
     tagline: "",
     splineUrl: "",
   });

@@ -808,6 +808,23 @@ export const Icons = {
       <path d="M8.764 2H7.353V3.445H8.764V2Z" fill="#2396ED" />
     </svg>
   ),
+  linux: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
+      <title>Linux</title>
+      <path
+        fill="#000"
+        d="M64 8C35.163 8 12 31.163 12 60c0 16.569 7.547 31.369 19.375 41.125 4.875 3.875 10.375 7 16.25 9.125C54.875 113.5 59.375 114.5 64 114.5s9.125-1 16.375-4.25c5.875-2.125 11.375-5.25 16.25-9.125C108.453 91.369 116 76.569 116 60 116 31.163 92.837 8 64 8z"
+      />
+      <ellipse fill="#fff" cx="64" cy="68" rx="20" ry="26" />
+      <ellipse fill="#fff" cx="42" cy="42" rx="9" ry="11" />
+      <ellipse fill="#fff" cx="86" cy="42" rx="9" ry="11" />
+      <circle fill="#000" cx="54" cy="62" r="4" />
+      <circle fill="#000" cx="74" cy="62" r="4" />
+      <path fill="#FCC624" d="M58 74h12l-6 11z" />
+      <ellipse fill="#FCC624" cx="50" cy="98" rx="9" ry="5.5" />
+      <ellipse fill="#FCC624" cx="78" cy="98" rx="9" ry="5.5" />
+    </svg>
+  ),
   java: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

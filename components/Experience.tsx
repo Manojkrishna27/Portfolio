@@ -7,6 +7,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { experiences, type Experience } from "@/lib/experience";
+import { isValidExternalUrl } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Experience Card                                                    */
@@ -84,9 +85,9 @@ function ExperienceCard({
 
               {/* Company */}
               <div className="mt-1.5 flex items-center gap-1.5">
-                {experience.companyUrl ? (
+                {isValidExternalUrl(experience.companyUrl) ? (
                   <Link
-                    href={experience.companyUrl}
+                    href={experience.companyUrl!}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group/link inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-200"

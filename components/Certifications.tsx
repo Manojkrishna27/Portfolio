@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { certifications, type Certification } from "@/lib/certifications";
+import { isValidExternalUrl } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Certification Card — horizontal wide card with tilt               */
@@ -52,14 +53,15 @@ function CertificationCard({
           />
 
           {/* Left — Certificate image */}
-          <div className="relative z-1 w-full shrink-0 overflow-hidden sm:w-56 md:w-64 lg:w-72">
+          <div className="relative z-1 w-full shrink-0 overflow-hidden bg-neutral-950 sm:w-56 md:w-64 lg:w-72">
             <div className="relative aspect-3/2 w-full sm:h-full sm:aspect-auto ">
               <Image
                 src={cert.image}
                 alt={cert.name}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                className="object-contain p-1 transition-transform duration-700 group-hover:scale-[1.02]"
                 sizes="(max-width: 640px) 100vw, 288px"
+                loading="lazy"
               />
             </div>
           </div>
@@ -101,7 +103,7 @@ function CertificationCard({
             />
 
             {/* Optional link */}
-            {cert.link && (
+            {cert.link && isValidExternalUrl(cert.link) && (
               <Link
                 href={cert.link}
                 target="_blank"

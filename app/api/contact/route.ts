@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+import { SITE } from "@/lib/constants";
 
 /** Basic HTML-escape to prevent injection */
 function esc(str: string) {
@@ -24,16 +23,27 @@ export async function POST(request: Request) {
       );
     }
 
+    const apiKey = process.env.SENDGRID_API_KEY;
     const toEmail = process.env.SENDGRID_TO_EMAIL;
     const fromName = process.env.SENDGRID_FROM_NAME || "Portfolio Contact";
+
+    if (!apiKey || !apiKey.startsWith("SG.")) {
+      console.error("SENDGRID_API_KEY is missing or invalid");
+      return NextResponse.json(
+        { error: "Email service is not configured" },
+        { status: 503 }
+      );
+    }
 
     if (!toEmail) {
       console.error("SENDGRID_TO_EMAIL is not configured");
       return NextResponse.json(
         { error: "Email service is not configured" },
-        { status: 500 }
+        { status: 503 }
       );
     }
+
+    sgMail.setApiKey(apiKey);
 
     const safeName = esc(name);
     const safeEmail = esc(email);
@@ -41,7 +51,7 @@ export async function POST(request: Request) {
 
     await sgMail.send({
       to: toEmail,
-      from: { email: toEmail, name: `Ayush Portfolio - ${fromName}` },
+      from: { email: toEmail, name: `${SITE.name} Portfolio - ${fromName}` },
       replyTo: { email, name },
       subject: `${name} — via portfolio`,
       categories: ["portfolio-contact"],

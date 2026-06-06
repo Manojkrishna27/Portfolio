@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Admin Panel | Portfolio",
-  description: "Manage portfolio data",
+  title: `Admin Panel | ${SITE.name}`,
+  description: `Manage ${SITE.name} portfolio content`,
 };
 
 export default function AdminLayout({

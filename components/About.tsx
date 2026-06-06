@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { Monitor, Server, Layers, Network, Bot } from "lucide-react";
+import { ASSETS, SITE } from "@/lib/constants";
 
 function IconNode({ icon: Icon, color, label }: { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; color: string; label: string }) {
   return (
@@ -37,8 +38,9 @@ interface AboutData {
 export default function About({ data }: { data?: AboutData }) {
   const heading = data?.heading || "Who I am & What I offer";
   const paragraphs = data?.paragraphs || [
-    "I'm Ayush Kumar Gupta \u2014 a full-stack developer with a sharp eye for clean architecture and a deep love for solving hard problems. From crafting intuitive UIs to designing scalable backends, I build products that are fast, reliable, and a joy to use.",
-    "Competitive programmer at heart, builder by habit \u2014 I thrive at the intersection of performance, design, and developer experience.",
+    "I am a final-year B.Tech Artificial Intelligence and Data Science student at V.S.B College of Engineering Technical Campus, passionate about Full Stack Development, Cybersecurity, Cloud Computing, and AI-driven solutions. I enjoy building secure, scalable, and efficient applications that solve real-world problems.",
+    "My focus is on software engineering, cloud technologies, cybersecurity, and modern web development — with hands-on experience across React, Flask, AWS, Docker, and secure system design.",
+    "Recognized with a LeetCode Problem Solving Excellence Award, Top Performer in Department for Problem Solving, Hackathon 360 3.0 participation, and Top 15 Talkathon placement.",
   ];
 
   return (
@@ -54,13 +56,14 @@ export default function About({ data }: { data?: AboutData }) {
             className="relative flex h-64 w-64 sm:h-105 sm:w-105 shrink-0 items-center justify-center overflow-hidden"
           >
             {/* Center avatar */}
-            <div className="relative z-10 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-2xl shadow-white/5 backdrop-blur-sm sm:h-32 sm:w-32">
+            <div className="relative z-10 h-36 w-36 overflow-hidden rounded-full border border-white/15 bg-neutral-900 shadow-2xl shadow-white/5 sm:h-40 sm:w-40">
               <Image
-                src="https://ik.imagekit.io/lmpthl5suv/1774446176731.png?updatedAt=1774456690946"
-                alt="Ayush Kumar Gupta"
-                width={128}
-                height={128}
-                className="h-full w-full rounded-full object-cover crop-center"
+                src={ASSETS.profileImage}
+                alt={SITE.name}
+                fill
+                className="object-cover object-center"
+                sizes="160px"
+                priority
               />
             </div>
 
@@ -73,8 +76,8 @@ export default function About({ data }: { data?: AboutData }) {
 
             {/* Outer orbit — reverse direction */}
             <OrbitingCircles radius={170} duration={30} iconSize={60} reverse path>
-              <IconNode icon={Network} color="#FBBF24" label="System Design" />
-              <IconNode icon={Bot} color="#FB923C" label="AI" />
+              <IconNode icon={Network} color="#FBBF24" label="Cloud" />
+              <IconNode icon={Bot} color="#FB923C" label="Security" />
             </OrbitingCircles>
           </motion.div>
 

@@ -7,7 +7,6 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import CertificationsSection from "@/components/sections/CertificationsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
-import CompetitiveProgramming from "@/components/CP";
 
 import {
   HeroSkeleton,
@@ -33,8 +32,6 @@ export default function Home() {
       <Suspense fallback={<SkillsSkeleton />}>
         <SkillsSection />
       </Suspense>
-
-      <CompetitiveProgramming />
 
       <Suspense fallback={<ProjectsSkeleton />}>
         <ProjectsSection />

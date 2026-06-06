@@ -2,61 +2,43 @@ export interface Project {
   title: string;
   subtitle?: string;
   description: string;
-  image?: string; // path to screenshot / preview image
-  video?: string; // path to video preview (takes precedence over image)
-  liveUrl?: string; // live demo link (optional)
-  githubUrl: string; // GitHub repo link
-  tags: string[]; // tech stack tags
-  accentColor: string; // accent colour used for the card
+  image?: string;
+  video?: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  tags: string[];
+  accentColor: string;
 }
-
 
 export const projects: Project[] = [
   {
-    title: "CuraTube ",
-    subtitle: "A fully-featured video streaming platform",
+    title: "SecureScan AI",
+    subtitle: "Website Security Assessment Platform",
     description:
-      "A full-stack video streaming platform that supports a handful of cool features similar to any other video streaming application out there.",
-    image: "https://ik.imagekit.io/lmpthl5suv/curatube-dummy.png",
-    githubUrl: "https://github.com/ayyush08/CuraTube",
-    liveUrl: "https://curatube.vercel.app",
-    tags: [
-      "MERN",
-      "TanStack Query",
-      "TanStack Router",
-      "Cloudinary",
-      "MongoDB",
-      "Signed uploads",
-    ],
-    accentColor: "#FF4040"
+      "Full-stack cybersecurity platform using React, Flask, MySQL, Docker, Nginx, and AWS to analyze SSL/TLS configurations, security headers, and website security posture with AI-driven recommendations, PDF reporting, and domain monitoring.",
+    image: "/projects/securescan-ai.png",
+    githubUrl: "https://github.com/Manojkrishna27/Secure_scan",
+    tags: ["React", "Flask", "MySQL", "Redis", "Docker", "Nginx", "AWS", "JWT"],
+    accentColor: "#06B6D4",
   },
   {
-    title: "CuraVibe",
-    subtitle: "a full-stack developer portfolio builder",
+    title: "SecureAuth",
+    subtitle: "Authentication & Security Dashboard",
     description:
-      "A browser-based IDE that brings a professional development environment with AI directly to your browser.",
-    image: "https://ik.imagekit.io/lmpthl5suv/curavibe-dummy.png",
-    githubUrl: "https://github.com/ayyush08/CuraVibe",
-    liveUrl: "https://curavibe.vercel.app",
-    tags: ["Next.js","NextAuth","Prisma", "MongoDB","MonacoEditor","AI","Github Integration"],
-    accentColor: "#3B82F6"
+      "Dockerized authentication platform with JWT authentication, OTP recovery, webcam-based intrusion detection, login monitoring, rate limiting, and role-based access control.",
+    image: "/projects/secureauth.png",
+    githubUrl: "https://github.com/Manojkrishna27/secure-auth",
+    tags: ["React", "Flask", "MySQL", "Docker", "JWT"],
+    accentColor: "#6366F1",
   },
   {
-    title: "Inkognito",
+    title: "Student Management System",
+    subtitle: "Full-Stack CRUD Application",
     description:
-      "A web application that allows users to send messages anonymously.",
-    image: "https://ik.imagekit.io/lmpthl5suv/ink.jpg?updatedAt=1748963140186",
-    githubUrl: "https://github.com/ayyush08/Inkognito",
-    tags: ["Next.js", "NextAuth","MongoDB","Zod","Resend","Gemini API","Shadcn UI"],
-    accentColor: "#FF8C00"
+      "Full-stack CRUD application with search, sorting, pagination, validation, and responsive user interface design for efficient student record management.",
+    image: "/projects/student-management.png",
+    githubUrl: "https://github.com/Manojkrishna27/Student-Management",
+    tags: ["React", "Flask", "MySQL"],
+    accentColor: "#10B981",
   },
-  {
-    title: "HarmoniQ",
-    subtitle: "AI sound Designer",
-    description: "A web application that provides an interface for users to generate sounds of their choice using a simple prompt and save them to their profile.",
-    image: "https://ik.imagekit.io/lmpthl5suv/harmoniq-dummy.png",
-    githubUrl: "https://github.com/ayyush08/HarmoniQ",
-    tags: ["Next.js", "MongoDB", "FastAPI", "Python","Gemini API","HuggingFace Models"],
-    accentColor: "#8B5CF6"
-  }
 ];

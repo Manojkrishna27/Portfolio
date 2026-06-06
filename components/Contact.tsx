@@ -7,6 +7,7 @@ import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Icons } from "@/components/icons";
 import { socials as staticSocials } from "@/lib/socials";
+import { isValidExternalUrl, SITE } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Social link config                                                 */
@@ -181,10 +182,23 @@ export default function Contact({
                   Get in touch
                 </h3>
                 <p className="text-sm leading-relaxed text-neutral-400">
-                  I&apos;m always open to discussing new projects, creative
-                  ideas, or opportunities to be part of something great.
-                  Feel free to reach out!
+                  Open to internships, placements, and collaboration on full stack,
+                  cloud, and cybersecurity projects. Reach out via email or the form.
                 </p>
+                <div className="space-y-2 pt-2 text-sm text-neutral-400">
+                  <p>
+                    <span className="text-neutral-300">Email:</span>{" "}
+                    <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-white">
+                      {SITE.email}
+                    </a>
+                  </p>
+                  <p>
+                    <span className="text-neutral-300">Phone:</span>{" "}
+                    <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-white">
+                      {SITE.phone}
+                    </a>
+                  </p>
+                </div>
               </div>
 
               {/* Social links */}
@@ -195,7 +209,7 @@ export default function Contact({
                 <div className="flex gap-3">
                   {socialDisplay.map((s) => {
                     const url = socialLinks[s.key];
-                    if (!url) return null;
+                    if (!isValidExternalUrl(url)) return null;
                     return (
                       <Link
                         key={s.key}

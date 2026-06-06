@@ -7,6 +7,7 @@ import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Lens } from "@/components/ui/lens";
 import { projects, type Project } from "@/lib/projects";
+import { isValidExternalUrl } from "@/lib/constants";
 import Link from "next/link";
 
 
@@ -50,7 +51,7 @@ function ProjectCard({
           {/* Image / Video area with Lens */}
           <div className="relative overflow-hidden">
             <Lens zoomFactor={1.5} lensSize={140} lensColor="black">
-              <div className="relative aspect-16/10 w-full overflow-hidden bg-black/40">
+              <div className="relative aspect-16/10 w-full overflow-hidden bg-neutral-950">
                 {project.video ? (
                   <video
                     src={project.video}
@@ -65,8 +66,9 @@ function ProjectCard({
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-contain"
+                    className="object-cover object-top"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center">
@@ -111,20 +113,22 @@ function ProjectCard({
               ))}
             </div>
 
-            {/* Links */}
+            {/* Links — GitHub only when URL is set; Live Demo when liveUrl exists */}
             <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-white/6 pt-2 sm:mt-3 sm:gap-3 sm:pt-3">
-              <Link
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-white/8 bg-white/3 px-2.5 py-1 text-[11px] font-medium text-neutral-400 transition-all duration-200 hover:border-white/20 hover:bg-white/6 hover:text-white sm:px-3 sm:py-1.5 sm:text-xs"
-              >
-                <Github className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                Source Code
-              </Link>
-              {project.liveUrl && (
+              {isValidExternalUrl(project.githubUrl) && (
                 <Link
-                  href={project.liveUrl}
+                  href={project.githubUrl!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/8 bg-white/3 px-2.5 py-1 text-[11px] font-medium text-neutral-400 transition-all duration-200 hover:border-white/20 hover:bg-white/6 hover:text-white sm:px-3 sm:py-1.5 sm:text-xs"
+                >
+                  <Github className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  Source Code
+                </Link>
+              )}
+              {isValidExternalUrl(project.liveUrl) && (
+                <Link
+                  href={project.liveUrl!}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11px] font-medium transition-all duration-200 hover:bg-white/6 sm:px-3 sm:py-1.5 sm:text-xs"

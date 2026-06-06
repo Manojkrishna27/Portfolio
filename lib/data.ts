@@ -1,5 +1,11 @@
 import dbConnect from "@/lib/mongodb";
 import ProjectModel from "@/models/Project";
+
+async function connectIfConfigured() {
+  if (!process.env.MONGODB_URI) return false;
+  await dbConnect();
+  return true;
+}
 import CertificationModel from "@/models/Certification";
 import SocialModel from "@/models/Social";
 import SkillCategoryModel from "@/models/SkillCategory";
@@ -11,7 +17,7 @@ import ExperienceModel from "@/models/Experience";
 // They talk directly to MongoDB (no HTTP round-trip).
 
 export async function getProjects() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const docs = await ProjectModel.find().sort({ order: 1, createdAt: -1 }).lean();
   return docs.map((d) => ({
     title: d.title,
@@ -27,7 +33,7 @@ export async function getProjects() {
 }
 
 export async function getCertifications() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const docs = await CertificationModel.find().sort({ order: 1, createdAt: -1 }).lean();
   return docs.map((d) => ({
     name: d.name,
@@ -37,7 +43,7 @@ export async function getCertifications() {
 }
 
 export async function getSocials() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const docs = await SocialModel.find().sort({ order: 1 }).lean();
   // Return as a Record<string, string> keyed by platform name
   const result: Record<string, string> = {};
@@ -48,7 +54,7 @@ export async function getSocials() {
 }
 
 export async function getSkillCategories() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const docs = await SkillCategoryModel.find().sort({ order: 1 }).lean();
   return docs.map((d) => ({
     title: d.title,
@@ -63,7 +69,7 @@ export async function getSkillCategories() {
 }
 
 export async function getHero() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const doc = await HeroModel.findOne().lean();
   if (!doc) return null;
   return {
@@ -75,7 +81,7 @@ export async function getHero() {
 }
 
 export async function getAbout() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const doc = await AboutModel.findOne().lean();
   if (!doc) return null;
   return {
@@ -85,7 +91,7 @@ export async function getAbout() {
 }
 
 export async function getExperiences() {
-  await dbConnect();
+  if (!(await connectIfConfigured())) return null;
   const docs = await ExperienceModel.find().sort({ order: 1, createdAt: -1 }).lean();
   return docs.map((d) => ({
     role: d.role,

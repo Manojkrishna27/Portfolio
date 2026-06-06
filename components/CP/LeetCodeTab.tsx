@@ -58,13 +58,13 @@ function buildStats(d: {
 }
 
 const FALLBACK = buildStats({
-  contestRating: 1687,
-  badge: "Knight",
-  totalSolved: 375,
-  easy: 120,
-  medium: 210,
-  hard: 45,
-  contests: 30,
+  contestRating: 0,
+  badge: null,
+  totalSolved: 0,
+  easy: 0,
+  medium: 0,
+  hard: 0,
+  contests: 0,
 });
 
 interface LeetCodeTabProps {
