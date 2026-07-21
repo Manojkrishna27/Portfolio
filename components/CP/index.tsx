@@ -9,7 +9,7 @@ import { useCodeforcesStats } from "@/hooks/useCodeforcesStats";
 import { LeetCodeTab } from "./LeetCodeTab";
 import { CodeforcesTab } from "./CodeforcesTab";
 
-const LEETCODE_USERNAME = "LEETCODE_USERNAME_HERE";
+const LEETCODE_USERNAME = "l67O6s3DHV";
 const CF_HANDLE = "CODEFORCES_HANDLE_HERE";
 
 const TABS = [
