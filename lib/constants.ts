@@ -21,7 +21,7 @@ export const ASSETS = {
 /** Update these placeholders with your live profile URLs before deployment. */
 export const SOCIAL_URLS = {
   github: "https://github.com/Manojkrishna27",
-  linkedin: "https://www.linkedin.com/jobs/",
+  linkedin: "https://www.linkedin.com/in/manoj-krishna-m/",
   leetcode: "https://leetcode.com/u/l67O6s3DHV/",
 } as const;
 
