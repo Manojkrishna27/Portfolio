@@ -12,6 +12,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Enterprise AI Compliance Auditor",
+    subtitle: "RAG-Powered Contract & Policy Auditing System",
+    description:
+      "Production-grade, multi-tenant AI system for automated legal contract ingestion, policy comparison, and risk analysis using advanced RAG. Features dynamic provider-agnostic AI adapters (Gemini & OpenAI), Qdrant vector embeddings, PyMuPDF semantic chunking, and Redis-backed RBAC security to audit business agreements against regulatory standards.",
+    image: "/projects/Screenshot from 2026-07-22 21-08-02.png",
+    githubUrl: "https://github.com/Manojkrishna27/ENTERPRISE-AI-COMPLIANCE-AUDITOR",
+    tags: ["React", "Flask", "Python", "LlamaIndex", "Qdrant", "PostgreSQL", "Redis", "Docker"],
+    accentColor: "#8B5CF6",
+  },
+  {
     title: "SecureScan AI",
     subtitle: "Website Security Assessment Platform",
     description:

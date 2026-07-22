@@ -71,6 +71,17 @@ export async function POST(req: NextRequest) {
   if (projectCount === 0) {
     await Project.insertMany([
       {
+        title: "Enterprise AI Compliance Auditor",
+        subtitle: "RAG-Powered Contract & Policy Auditing System",
+        description:
+          "Production-grade, multi-tenant AI system for automated legal contract ingestion, policy comparison, and risk analysis using advanced RAG. Features dynamic provider-agnostic AI adapters (Gemini & OpenAI), Qdrant vector embeddings, PyMuPDF semantic chunking, and Redis-backed RBAC security to audit business agreements against regulatory standards.",
+        image: "/projects/Screenshot from 2026-07-22 21-08-02.png",
+        githubUrl: "https://github.com/Manojkrishna27/ENTERPRISE-AI-COMPLIANCE-AUDITOR",
+        tags: ["React", "Flask", "Python", "LlamaIndex", "Qdrant", "PostgreSQL", "Redis", "Docker"],
+        accentColor: "#8B5CF6",
+        order: 0,
+      },
+      {
         title: "SecureScan AI",
         subtitle: "Website Security Assessment Platform",
         description:
@@ -79,7 +90,7 @@ export async function POST(req: NextRequest) {
         githubUrl: "https://github.com/Manojkrishna27/Secure_scan",
         tags: ["React", "Flask", "MySQL", "Redis", "Docker", "AWS", "JWT"],
         accentColor: "#06B6D4",
-        order: 0,
+        order: 1,
       },
       {
         title: "SecureAuth",
@@ -90,7 +101,7 @@ export async function POST(req: NextRequest) {
         githubUrl: "https://github.com/Manojkrishna27/secure-auth",
         tags: ["React", "Flask", "MySQL", "Docker", "JWT"],
         accentColor: "#6366F1",
-        order: 1,
+        order: 2,
       },
       {
         title: "Student Management System",
@@ -101,10 +112,10 @@ export async function POST(req: NextRequest) {
         githubUrl: "https://github.com/Manojkrishna27/Student-Management",
         tags: ["React", "Flask", "MySQL"],
         accentColor: "#10B981",
-        order: 2,
+        order: 3,
       },
     ]);
-    results.projects = `Created 3`;
+    results.projects = `Created 4`;
   } else {
     results.projects = `Already has ${projectCount}`;
   }
