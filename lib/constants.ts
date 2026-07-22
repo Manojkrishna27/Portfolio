@@ -22,7 +22,7 @@ export const ASSETS = {
 export const SOCIAL_URLS = {
   github: "https://github.com/Manojkrishna27",
   linkedin: "https://www.linkedin.com/jobs/",
-  leetcode: "https://leetcode.com/",
+  leetcode: "https://leetcode.com/u/l67O6s3DHV/",
 } as const;
 
 export const PLACEHOLDER_MARK = "URL_HERE";
