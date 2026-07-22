@@ -182,8 +182,7 @@ export default function Contact({
                   Get in touch
                 </h3>
                 <p className="text-sm leading-relaxed text-neutral-400">
-                  Open to internships, placements, and collaboration on full stack,
-                  cloud, and cybersecurity projects. Reach out via email or the form.
+                  Actively seeking opportunities as a Forward Deployed Engineer, Software Engineer, Backend Engineer, or AI Engineer. Open to internships, placements, and collaborations involving AI systems, cloud infrastructure, backend engineering, and production software. Reach out via email or the form.
                 </p>
                 <div className="space-y-2 pt-2 text-sm text-neutral-400">
                   <p>

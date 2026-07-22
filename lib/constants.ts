@@ -1,10 +1,12 @@
 /** Central site config — single source of truth for portfolio branding. */
 export const SITE = {
-  name: "Manojkrishna M",
-  role: "Full Stack Developer | AI & Data Science Student",
-  title: "Manojkrishna M | Full Stack Developer",
+  name: "Manojkrishna",
+  role: "Forward Deployed Engineer | AI & Data Science Student",
+  subtitle:
+    "Building AI-powered software, scalable backend systems, secure cloud applications, and production-ready solutions that solve real-world business problems.",
+  title: "Manojkrishna | Forward Deployed Engineer",
   description:
-    "Portfolio of Manojkrishna M — Final-year B.Tech AI & Data Science student and Full Stack Developer specializing in React, Flask, cloud computing, and scalable web applications.",
+    "Forward Deployed Engineer portfolio showcasing AI systems, full-stack development, cloud infrastructure, cybersecurity, scalable backend services, and production-ready software projects.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://manojkrishna-portfolio.vercel.app",
@@ -43,6 +45,6 @@ export const SITE_JSON_LD = {
   name: SITE.name,
   email: SITE.email,
   url: SITE.url,
-  jobTitle: "Full Stack Developer",
+  jobTitle: "Forward Deployed Engineer",
   description: SITE.description,
 } as const;

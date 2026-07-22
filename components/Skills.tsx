@@ -53,7 +53,7 @@ export interface SkillCategoryData {
 interface LearningItem {
   icon: LucideIcon;
   title: string;
-  description: string;
+  bullets: string[];
 }
 
 /* ------------------------------------------------------------------ */
@@ -82,6 +82,22 @@ function resolveCategories(data: SkillCategoryData[]): SkillCategory[] {
 
 const fallbackCategories: SkillCategory[] = [
   {
+    title: "AI Engineering",
+    categoryIcon: Bot,
+    color: "#3B82F6",
+    gradientFrom: "#3B82F6",
+    gradientTo: "#8B5CF6",
+    gradientColor: "#3B82F6",
+    span: "col-span-1",
+    skills: [
+      { name: "Prompt Engineering", icon: Icons.openai },
+      { name: "RAG Systems", icon: Icons.tanstack },
+      { name: "LLM Integration", icon: Icons.openai },
+      { name: "AI APIs", icon: Icons.restapi },
+      { name: "Qdrant", icon: Icons.qdrant },
+    ],
+  },
+  {
     title: "Programming",
     categoryIcon: Code2,
     color: "#F472B5",
@@ -91,8 +107,6 @@ const fallbackCategories: SkillCategory[] = [
     span: "col-span-1",
     skills: [
       { name: "Python", icon: Icons.python },
-      { name: "Java", icon: Icons.java },
-      { name: "JavaScript", icon: Icons.javascript },
     ],
   },
   {
@@ -135,6 +149,7 @@ const fallbackCategories: SkillCategory[] = [
     skills: [
       { name: "MySQL", icon: Icons.postgresql },
       { name: "Redis", icon: Icons.redis },
+      { name: "Qdrant", icon: Icons.qdrant },
     ],
   },
   {
@@ -148,7 +163,6 @@ const fallbackCategories: SkillCategory[] = [
     skills: [
       { name: "AWS", icon: Icons.docker },
       { name: "Docker", icon: Icons.docker },
-      { name: "Nginx", icon: Icons.express },
       { name: "Linux", icon: Icons.linux },
     ],
   },
@@ -171,19 +185,36 @@ const fallbackCategories: SkillCategory[] = [
 
 const learningItems: LearningItem[] = [
   {
-    icon: Monitor,
-    title: "Web Development",
-    description: "React, modern front-end patterns, and full-stack application development",
-  },
-  {
-    icon: Bot,
-    title: "AI and Data Science",
-    description: "Intelligent systems, machine learning, and data-driven application development",
+    icon: Server,
+    title: "Forward Deployed Engineering",
+    bullets: [
+      "Customer-focused software delivery",
+      "Production AI systems",
+      "Backend architecture",
+      "Distributed systems",
+    ],
   },
   {
     icon: Network,
-    title: "Cloud Computing",
-    description: "AWS services, deployment pipelines, and scalable infrastructure",
+    title: "Cloud & Infrastructure",
+    bullets: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Infrastructure Automation",
+    ],
+  },
+  {
+    icon: Bot,
+    title: "AI Systems",
+    bullets: [
+      "LLM Applications",
+      "RAG Pipelines",
+      "AI Agents",
+      "Vector Databases",
+      "Model Deployment",
+    ],
   },
 ];
 
@@ -255,9 +286,14 @@ function LearningCard({
         </div>
         <div className="min-w-0">
           <h4 className="text-sm font-semibold text-white">{item.title}</h4>
-          <p className="mt-0.5 text-xs leading-relaxed text-neutral-500">
-            {item.description}
-          </p>
+          <ul className="mt-1.5 space-y-1 text-xs leading-relaxed text-neutral-400">
+            {item.bullets.map((b, i) => (
+              <li key={i} className="flex items-center gap-1.5">
+                <span className="h-1 w-1 rounded-full bg-teal-400/60" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </BlurFade>
@@ -279,15 +315,14 @@ export default function Skills({ data }: { data?: SkillCategoryData[] }) {
           <BlurFade delay={0.04} inView>
             <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               <span className="bg-linear-to-r from-white to-neutral-500 bg-clip-text text-transparent">
-                Skills I have
+                Technical Expertise
               </span>
             </h2>
           </BlurFade>
 
           <BlurFade delay={0.12} inView>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              A snapshot of the tools, languages, and frameworks I work with
-              day to day.
+              A snapshot of the tools, languages, frameworks, and AI technologies I work with day to day.
             </p>
           </BlurFade>
         </div>
@@ -303,14 +338,14 @@ export default function Skills({ data }: { data?: SkillCategoryData[] }) {
           ))}
         </div>
 
-        {/* Currently Learning section */}
+        {/* Currently Exploring section */}
         <BlurFade delay={0.25} inView>
           <div className="mt-6 rounded-xl border border-white/8 bg-white/[0.02] p-4 sm:p-5">
             {/* Header */}
             <div className="mb-5 flex items-center gap-2.5">
               <BookOpen className="h-4 w-4 text-teal-400" />
               <h3 className="text-xs font-bold uppercase tracking-widest text-teal-400">
-                Currently Learning
+                Currently Exploring
               </h3>
               <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             </div>

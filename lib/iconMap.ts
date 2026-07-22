@@ -4,6 +4,8 @@ import {
   Server,
   Database,
   Wrench,
+  Bot,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { Icons, type IconProps } from "@/components/icons";
@@ -43,6 +45,8 @@ export const skillIconMap: Record<string, IconRenderer> = {
   linux: Icons.linux,
   git: Icons.git,
   postman: Icons.postman,
+  openai: Icons.openai,
+  qdrant: Icons.qdrant,
 };
 /*  Category icon map  —  categoryIconKey (string) → LucideIcon        */
 /* ------------------------------------------------------------------ */
@@ -54,6 +58,8 @@ export const categoryIconMap: Record<string, LucideIcon> = {
   Server,
   Database,
   Wrench,
+  Bot,
+  Sparkles,
 };
 
 /* ------------------------------------------------------------------ */

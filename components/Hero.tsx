@@ -18,6 +18,7 @@ interface HeroData {
   greeting: string;
   name: string;
   tagline: string;
+  subtitle?: string;
   splineUrl: string;
 }
 
@@ -25,6 +26,7 @@ export default function Hero({ data }: { data?: HeroData }) {
   const greeting = data?.greeting || "Hey, I'm";
   const name = data?.name || SITE.name;
   const tagline = data?.tagline || SITE.role;
+  const subtitle = data?.subtitle || SITE.subtitle;
   const splineUrl = data?.splineUrl || "https://prod.spline.design/AeryvEqWxr2qjINc/scene.splinecode";
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -59,14 +61,19 @@ export default function Hero({ data }: { data?: HeroData }) {
               </LineShadowText>
             </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-lg leading-relaxed text-muted-foreground sm:text-xl"
+              className="space-y-3"
             >
-              {tagline}
-            </motion.p>
+              <p className="text-xl font-medium tracking-tight text-white sm:text-2xl">
+                {tagline}
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                {subtitle}
+              </p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 12 }}

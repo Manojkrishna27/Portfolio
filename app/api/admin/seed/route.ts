@@ -40,8 +40,8 @@ export async function POST(req: NextRequest) {
   if (heroCount === 0) {
     await HeroModel.create({
       greeting: "Hey, I'm",
-      name: "Manojkrishna M",
-      tagline: "Full Stack Developer | AI & Data Science Student",
+      name: "Manojkrishna",
+      tagline: "Forward Deployed Engineer | AI & Data Science Student",
       splineUrl:
         "https://prod.spline.design/AeryvEqWxr2qjINc/scene.splinecode",
     });
@@ -56,8 +56,8 @@ export async function POST(req: NextRequest) {
     await AboutModel.create({
       heading: "Who I am & What I offer",
       paragraphs: [
-        "I am a final-year B.Tech Artificial Intelligence and Data Science student at V.S.B College of Engineering Technical Campus, passionate about Full Stack Development, Cybersecurity, Cloud Computing, and AI-driven solutions. I enjoy building secure, scalable, and efficient applications that solve real-world problems.",
-        "My focus is on software engineering, cloud technologies, cybersecurity, and modern web development — with hands-on experience across React, Flask, AWS, Docker, and secure system design.",
+        "I am a final-year B.Tech Artificial Intelligence and Data Science student at V.S.B College of Engineering Technical Campus, passionate about building production-ready AI systems, scalable backend services, cloud infrastructure, and customer-focused software solutions. I enjoy working across the full technology stack to solve complex real-world engineering challenges.",
+        "My interests include Forward Deployed Engineering, software engineering, AI applications, cloud computing, cybersecurity, and modern web technologies. I have hands-on experience designing and deploying applications using React, Flask, AWS, Docker, Redis, MySQL, and secure system architectures.",
         "Recognized with a LeetCode Problem Solving Excellence Award, Top Performer in Department for Problem Solving, Hackathon 360 3.0 participation, and Top 15 Talkathon placement.",
       ],
     });
@@ -74,10 +74,10 @@ export async function POST(req: NextRequest) {
         title: "SecureScan AI",
         subtitle: "Website Security Assessment Platform",
         description:
-          "Full-stack cybersecurity platform using React, Flask, MySQL, Docker, Nginx, and AWS to analyze SSL/TLS configurations, security headers, and website security posture with AI-driven recommendations, PDF reporting, and domain monitoring.",
+          "Enterprise-grade cybersecurity platform that analyzes SSL/TLS configurations, security headers, and website security posture while generating AI-powered security recommendations. Built using scalable backend architecture with cloud-ready deployment, asynchronous task processing, automated PDF reporting, and secure authentication.",
         image: "/projects/securescan-ai.png",
         githubUrl: "https://github.com/Manojkrishna27/Secure_scan",
-        tags: ["React", "Flask", "MySQL", "Redis", "Docker", "Nginx", "AWS", "JWT"],
+        tags: ["React", "Flask", "MySQL", "Redis", "Docker", "AWS", "JWT"],
         accentColor: "#06B6D4",
         order: 0,
       },
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
         title: "SecureAuth",
         subtitle: "Authentication & Security Dashboard",
         description:
-          "Dockerized authentication platform with JWT authentication, OTP recovery, webcam-based intrusion detection, login monitoring, rate limiting, and role-based access control.",
+          "Production-ready authentication and security system designed for high reliability and active threat protection. Features JWT session management, multi-factor OTP recovery, webcam intrusion monitoring, rate limiting, and role-based access control built on containerized microservices.",
         image: "/projects/secureauth.png",
         githubUrl: "https://github.com/Manojkrishna27/secure-auth",
         tags: ["React", "Flask", "MySQL", "Docker", "JWT"],
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
         title: "Student Management System",
         subtitle: "Full-Stack CRUD Application",
         description:
-          "Full-stack CRUD application with search, sorting, pagination, validation, and responsive user interface design for efficient student record management.",
+          "High-throughput data management service engineered for efficient record handling, database query optimization, data validation, and real-time pagination. Delivers production-level reliability with clean backend-frontend API contracts.",
         image: "/projects/student-management.png",
         githubUrl: "https://github.com/Manojkrishna27/Student-Management",
         tags: ["React", "Flask", "MySQL"],
@@ -161,6 +161,23 @@ export async function POST(req: NextRequest) {
   if (skillCount === 0) {
     await SkillCategory.insertMany([
       {
+        title: "AI Engineering",
+        categoryIconKey: "Bot",
+        color: "#3B82F6",
+        gradientFrom: "#3B82F6",
+        gradientTo: "#8B5CF6",
+        gradientColor: "#3B82F6",
+        span: "col-span-3 lg:col-span-1",
+        skills: [
+          { name: "Prompt Engineering", iconKey: "openai" },
+          { name: "RAG Systems", iconKey: "tanstack" },
+          { name: "LLM Integration", iconKey: "openai" },
+          { name: "AI APIs", iconKey: "restapi" },
+          { name: "Qdrant", iconKey: "qdrant" },
+        ],
+        order: 0,
+      },
+      {
         title: "Programming",
         categoryIconKey: "Code2",
         color: "#F472B5",
@@ -170,10 +187,8 @@ export async function POST(req: NextRequest) {
         span: "col-span-2 lg:col-span-2",
         skills: [
           { name: "Python", iconKey: "python" },
-          { name: "Java", iconKey: "java" },
-          { name: "JavaScript", iconKey: "javascript" },
         ],
-        order: 0,
+        order: 1,
       },
       {
         title: "Frontend",
@@ -189,7 +204,7 @@ export async function POST(req: NextRequest) {
           { name: "JavaScript", iconKey: "javascript" },
           { name: "React.js", iconKey: "react" },
         ],
-        order: 1,
+        order: 2,
       },
       {
         title: "Backend",
@@ -204,7 +219,7 @@ export async function POST(req: NextRequest) {
           { name: "REST APIs", iconKey: "restapi" },
           { name: "JWT Authentication", iconKey: "restapi" },
         ],
-        order: 2,
+        order: 3,
       },
       {
         title: "Databases",
@@ -217,8 +232,9 @@ export async function POST(req: NextRequest) {
         skills: [
           { name: "MySQL", iconKey: "postgresql" },
           { name: "Redis", iconKey: "redis" },
+          { name: "Qdrant", iconKey: "qdrant" },
         ],
-        order: 3,
+        order: 4,
       },
       {
         title: "Cloud & DevOps",
@@ -231,10 +247,9 @@ export async function POST(req: NextRequest) {
         skills: [
           { name: "AWS", iconKey: "docker" },
           { name: "Docker", iconKey: "docker" },
-          { name: "Nginx", iconKey: "express" },
           { name: "Linux", iconKey: "linux" },
         ],
-        order: 4,
+        order: 5,
       },
       {
         title: "Tools",
@@ -250,7 +265,7 @@ export async function POST(req: NextRequest) {
           { name: "Postman", iconKey: "postman" },
           { name: "VS Code", iconKey: "github" },
         ],
-        order: 5,
+        order: 6,
       },
     ]);
     results.skills = `Created 6 categories`;

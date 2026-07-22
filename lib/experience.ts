@@ -10,13 +10,14 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    role: "Project Intern",
+    role: "Software Engineering Intern",
     company: "Emglitz Technologies",
     duration: "June 2025 — August 2025",
     description: [
-      "Developed responsive web interfaces and integrated REST APIs for production-oriented features.",
-      "Applied UI/UX best practices to improve usability and visual consistency across pages.",
-      "Improved website performance and collaborated with development teams on delivery.",
+      "Developed production-ready web applications using React and Flask.",
+      "Integrated REST APIs and optimized backend communication.",
+      "Improved application performance and responsiveness.",
+      "Collaborated with engineers to deliver customer-facing features using modern development practices.",
     ],
     accentColor: "#60A5FA",
   },

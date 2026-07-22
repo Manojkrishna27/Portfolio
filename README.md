@@ -1,10 +1,10 @@
-# Manojkrishna M — Portfolio
+# Manojkrishna — Portfolio
 
 Personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.
 
 ## Owner
 
-- **Name:** Manojkrishna M
+- **Name:** Manojkrishna
 - **Role:** Full Stack Developer | AI & Data Science Student
 - **Email:** manojkrishna2725@gmail.com
 

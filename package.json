@@ -2,7 +2,7 @@
   "name": "manojkrishna-portfolio",
   "version": "1.0.0",
   "private": true,
-  "author": "Manojkrishna M <manojkrishna2725@gmail.com>",
+  "author": "Manojkrishna <manojkrishna2725@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
