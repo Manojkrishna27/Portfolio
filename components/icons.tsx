@@ -341,6 +341,17 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  githubactions: (props: IconProps) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      role="img"
+      {...props}
+    >
+      <title>GitHub Actions</title>
+      <path d="M23.16 11.236l-9.97-9.97c-.604-.604-1.583-.604-2.187 0l-9.97 9.97c-.604.604-.604 1.583 0 2.187l9.97 9.97c.604.604 1.583.604 2.187 0l9.97-9.97c.604-.604.604-1.583 0-2.187zM12 16.5l-4.5-4.5 1.41-1.41L12 13.67l5.09-5.09L18.5 10 12 16.5z" />
+    </svg>
+  ),
   postman: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

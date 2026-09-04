@@ -1,12 +1,12 @@
 /** Central site config — single source of truth for portfolio branding. */
 export const SITE = {
   name: "Manojkrishna",
-  role: "Forward Deployed Engineer | AI & Data Science Student",
+  role: "Software Engineer | AI & Data Science Student",
   subtitle:
     "Building AI-powered software, scalable backend systems, secure cloud applications, and production-ready solutions that solve real-world business problems.",
-  title: "Manojkrishna | Forward Deployed Engineer",
+  title: "Manojkrishna | Software Engineer",
   description:
-    "Forward Deployed Engineer portfolio showcasing AI systems, full-stack development, cloud infrastructure, cybersecurity, scalable backend services, and production-ready software projects.",
+    "Software Engineer portfolio showcasing AI systems, full-stack development, cloud infrastructure, cybersecurity, scalable backend services, and production-ready software projects.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://manojkrishna-portfolio.vercel.app",
@@ -45,6 +45,6 @@ export const SITE_JSON_LD = {
   name: SITE.name,
   email: SITE.email,
   url: SITE.url,
-  jobTitle: "Forward Deployed Engineer",
+  jobTitle: "Software Engineer",
   description: SITE.description,
 } as const;

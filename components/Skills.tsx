@@ -164,6 +164,7 @@ const fallbackCategories: SkillCategory[] = [
       { name: "AWS", icon: Icons.docker },
       { name: "Docker", icon: Icons.docker },
       { name: "Linux", icon: Icons.linux },
+      { name: "GitHub Actions", icon: Icons.githubactions },
     ],
   },
   {
@@ -186,7 +187,7 @@ const fallbackCategories: SkillCategory[] = [
 const learningItems: LearningItem[] = [
   {
     icon: Server,
-    title: "Forward Deployed Engineering",
+    title: "Software Engineering",
     bullets: [
       "Customer-focused software delivery",
       "Production AI systems",

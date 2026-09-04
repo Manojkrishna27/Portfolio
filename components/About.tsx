@@ -39,7 +39,7 @@ export default function About({ data }: { data?: AboutData }) {
   const heading = data?.heading || "Who I am & What I offer";
   const paragraphs = data?.paragraphs || [
     "I am a final-year B.Tech Artificial Intelligence and Data Science student at V.S.B College of Engineering Technical Campus, passionate about building production-ready AI systems, scalable backend services, cloud infrastructure, and customer-focused software solutions. I enjoy working across the full technology stack to solve complex real-world engineering challenges.",
-    "My interests include Forward Deployed Engineering, software engineering, AI applications, cloud computing, cybersecurity, and modern web technologies. I have hands-on experience designing and deploying applications using React, Flask, AWS, Docker, Redis, MySQL, and secure system architectures.",
+    "My interests include software engineering, AI applications, cloud computing, cybersecurity, and modern web technologies. I have hands-on experience designing and deploying applications using React, Flask, AWS, Docker, Redis, MySQL, and secure system architectures.",
     "Recognized with a LeetCode Problem Solving Excellence Award, Top Performer in Department for Problem Solving, Hackathon 360 3.0 participation, and Top 15 Talkathon placement.",
   ];
 

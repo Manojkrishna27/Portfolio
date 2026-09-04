@@ -44,6 +44,7 @@ export const skillIconMap: Record<string, IconRenderer> = {
   docker: Icons.docker,
   linux: Icons.linux,
   git: Icons.git,
+  githubactions: Icons.githubactions,
   postman: Icons.postman,
   openai: Icons.openai,
   qdrant: Icons.qdrant,
